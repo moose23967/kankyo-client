@@ -5,8 +5,8 @@ console.info('#1 phase of the build');
 
 const entrypoints: string[] = [];
 
-for await (const file of new Glob('**/*.ts').scan('src')) {
-  entrypoints.push(`src/${file}`);
+for await (const file of new Glob('**/*.ts').scan('sources')) {
+  entrypoints.push(`sources/${file}`);
 }
 
 const firstPhaseBuildOutput = await Bun.build({
